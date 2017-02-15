@@ -101,9 +101,6 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
    */
   function loadLocale(localeUrl, $locale, localeId, $rootScope, $q, localeCache, $timeout) {
     
-    localeId = localeId.toLowerCase();
-    $locale = $locale.toLowerCase();
-
     function overrideValues(oldObject, newObject) {
       if (activeLocale !== localeId) {
         return;
@@ -216,6 +213,7 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
   };
 
   this.$get = ['$rootScope', '$injector', '$interpolate', '$locale', '$q', 'tmhDynamicLocaleCache', '$timeout', function($rootScope, $injector, interpolate, locale, $q, tmhDynamicLocaleCache, $timeout) {
+    console.log($locale);
     var localeLocation = interpolate(localeLocationPattern);
 
     storage = $injector.get(storageFactory);
