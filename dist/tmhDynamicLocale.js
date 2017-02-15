@@ -243,7 +243,7 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
     };
 
     function loadLocaleFn(localeId) {
-      var baseProperties = {locale: localeId, angularVersion: angular.version.full};
+      var baseProperties = {locale: localeId.toLowerCase(), angularVersion: angular.version.full};
       return loadLocale(localeLocation(angular.extend({}, extraProperties, baseProperties)), locale, localeId, $rootScope, $q, tmhDynamicLocaleCache, $timeout);
     }
   }];
