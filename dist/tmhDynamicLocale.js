@@ -102,6 +102,7 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
   function loadLocale(localeUrl, $locale, localeId, $rootScope, $q, localeCache, $timeout) {
     
     localeId = localeId.toLowerCase();
+    $locale = $locale.toLowerCase();
 
     function overrideValues(oldObject, newObject) {
       if (activeLocale !== localeId) {
