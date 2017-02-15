@@ -100,6 +100,8 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
    * @param {Object} $timeout The application $timeout
    */
   function loadLocale(localeUrl, $locale, localeId, $rootScope, $q, localeCache, $timeout) {
+    
+    localeId = localeId.toLowerCase();
 
     function overrideValues(oldObject, newObject) {
       if (activeLocale !== localeId) {
